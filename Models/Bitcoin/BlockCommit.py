@@ -77,7 +77,7 @@ class BlockCommit(BaseBlockCommit):
     def generate_initial_events():
             currentTime=0
             for node in p.NODES:
-            	BlockCommit.generate_next_block(node,currentTime)
+                BlockCommit.generate_next_block(node,currentTime)
 
     def propagate_block (block):
         for recipient in p.NODES:

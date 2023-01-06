@@ -85,9 +85,9 @@ class BlockCommit(BaseBlockCommit):
                  Scheduler.create_block_event(node,blockTime)
 
     def generate_initial_events():
-            currentTime=0
-            for node in p.NODES:
-            	BlockCommit.generate_next_block(node,currentTime)
+        currentTime=0
+        for node in p.NODES:
+            BlockCommit.generate_next_block(node,currentTime)
 
     def propagate_block (block):
         for recipient in p.NODES:
