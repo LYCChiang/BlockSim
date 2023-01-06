@@ -30,7 +30,9 @@ class BlockCommit(BaseBlockCommit):
                 elif p.Ttechnique == "Full": blockTrans,blockSize = FT.execute_transactions(miner,eventTime)
 
                 event.block.transactions = blockTrans
-                event.block.usedgas= blockSize
+                for tx in event.block.transactions:
+                    event.block.fee += tx.fee
+                event.block.usedgas= blockSize  # FIXME
 
             miner.blockchain.append(event.block)
 
@@ -75,7 +77,7 @@ class BlockCommit(BaseBlockCommit):
     def generate_initial_events():
             currentTime=0
             for node in p.NODES:
-            	BlockCommit.generate_next_block(node,currentTime)
+                BlockCommit.generate_next_block(node,currentTime)
 
     def propagate_block (block):
         for recipient in p.NODES:
