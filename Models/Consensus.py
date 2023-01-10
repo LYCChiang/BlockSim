@@ -4,7 +4,7 @@ from Models.Node import Node
 import random
 
 class Consensus:
-    global_chain=[] # the accpted global chain after resovling the forks
+    global_chain=[] # the accepted global chain after resolving the forks
 
 
     """

@@ -14,8 +14,6 @@ class InputsConfig:
         ''' Transaction Parameters '''
         hasTrans = True  # True/False to enable/disable transactions in the simulator
 
-        Ttechnique = "Full"
-
         # The rate of the number of transactions to be created per second
         Tn = 10
 

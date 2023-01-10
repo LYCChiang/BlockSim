@@ -19,13 +19,10 @@ if p.model == 3:
 def main():
     for i in range(p.Runs):
         clock = 0  # set clock to 0 at the start of the simulation
-        if p.hasTrans:
-            if p.Ttechnique == "Light":
-                LT.create_transactions()  # generate pending transactions
-            elif p.Ttechnique == "Full":
-                FT.create_transactions()  # generate pending transactions
 
-        Node.generate_gensis_block()  # generate the gensis block for all miners
+        FT.create_transactions()  # generate pending transactions
+
+        Node.generate_genesis_block()  # generate the gensis block for all miners
         # initiate initial events >= 1 to start with
         BlockCommit.generate_initial_events()
 

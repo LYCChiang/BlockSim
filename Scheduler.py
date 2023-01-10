@@ -3,9 +3,7 @@ import random
 from Models.Block import Block
 from Event import Event, Queue
 
-if p.model == 2:
-    from Models.Ethereum.Block import Block
-elif p.model == 3:
+if p.model == 3:
     from Models.AppendableBlock.Block import Block as AB
     from Models.AppendableBlock.Node import Node
 else:
