@@ -7,7 +7,7 @@ class InputsConfig:
     2 : Ethereum model
         3 : AppendableBlock model
     """
-    model = 3
+    model = 2
 
     ''' Input configurations for the base model '''
     if model == 0:

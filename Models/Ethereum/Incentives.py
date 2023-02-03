@@ -30,10 +30,15 @@ class Incentives(BaseIncentives):
     def distribute_rewards():
         for bc in c.global_chain:
             for m in p.NODES:
+                print("new comparison")
+                print(m.id)
+                print(bc.miner)
+                print(c.global_chain[c.global_chain.index(bc)-1].miner)
                 if bc.miner == m.id:
                     m.blocks +=1
-                    m.balance += p.Breward # increase the miner balance by the block reward
-                    tx_fee= Incentives.transactions_fee(bc)
-                    m.balance += tx_fee # add transaction fees to balance
-                    m.balance += Incentives.uncle_inclusion_rewards(bc) # add uncle inclusion rewards to balance
-            Incentives.uncle_rewards(bc) # add uncle generation rewards for the miner who build the uncle block
+                    if c.global_chain[c.global_chain.index(bc)-1].miner == m.id:
+                        m.balance += p.Breward # increase the miner balance by the block reward
+                        tx_fee= Incentives.transactions_fee(bc)
+                        m.balance += tx_fee # add transaction fees to balance
+                        #m.balance += Incentives.uncle_inclusion_rewards(bc) # add uncle inclusion rewards to balance
+            #Incentives.uncle_rewards(bc) # add uncle generation rewards for the miner who build the uncle block

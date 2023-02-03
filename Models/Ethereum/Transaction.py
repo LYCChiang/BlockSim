@@ -4,7 +4,6 @@ from InputsConfig import InputsConfig as p
 import numpy as np
 from Models.Network import Network
 import operator
-from Models.Ethereum.Distribution.DistFit import DistFit
 
 class Transaction(object):
 

@@ -2,6 +2,7 @@ from InputsConfig import InputsConfig as p
 from Event import Event, Queue
 from Scheduler import Scheduler
 from Statistics import Statistics
+from datetime import datetime
 
 if p.model == 3:
     from Models.AppendableBlock.BlockCommit import BlockCommit
@@ -76,12 +77,12 @@ def main():
             ########## reset all global variable before the next run #############
             Statistics.reset()  # reset all variables used to calculate the results
             Node.resetState()  # reset all the states (blockchains) for all nodes in the network
-            fname = "(Allverify)1day_{0}M_{1}K.xlsx".format(
-                p.Bsize/1000000, p.Tn/1000)
+            fname = "(Allverify)1day_{0}M_{1}K-{2}.xlsx".format(
+                p.Bsize/1000000, p.Tn/1000, datetime.now().strftime("%d.%m.%Y-%H.%M.%S"))
             # print all the simulation results in an excel file
             Statistics.print_to_excel(fname)
-            fname = "(Allverify)1day_{0}M_{1}K.xlsx".format(
-                p.Bsize/1000000, p.Tn/1000)
+            fname = "(Allverify)1day_{0}M_{1}K-{2}.xlsx".format(
+                p.Bsize/1000000, p.Tn/1000, datetime.now().strftime("%d.%m.%Y-%H.%M.%S"))
             # print all the simulation results in an excel file
             Statistics.print_to_excel(fname)
             Statistics.reset2()  # reset profit results
