@@ -29,7 +29,7 @@ class Node(BaseNode):
         self.transactionsPool = []
 
     # Generates a genesis block and appends it to the local blockchain of all the gateway nodes
-    def generate_gensis_block():
+    def generate_genesis_block():
         from InputsConfig import InputsConfig as p
         for node in p.NODES[0:p.Gn]:
             node.blockchain.append(Block())

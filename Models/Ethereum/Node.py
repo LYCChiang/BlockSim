@@ -17,7 +17,7 @@ class Node(BaseNode):
         self.balance= 0# to count all reward that a miner made, including block rewards + uncle rewards + transactions fees
 
 
-    def generate_gensis_block():
+    def generate_genesis_block():
         from InputsConfig import InputsConfig as p
         for node in p.NODES:
             node.blockchain.append(Block())

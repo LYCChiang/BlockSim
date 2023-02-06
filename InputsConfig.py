@@ -1,11 +1,11 @@
 
 class InputsConfig:
 
-    """ Seclect the model to be simulated.
+    """ Select the model to be simulated.
     0 : The base model
     1 : Bitcoin model
     2 : Ethereum model
-        3 : AppendableBlock model
+    3 : AppendableBlock model
     """
     model = 2
 
@@ -79,7 +79,7 @@ class InputsConfig:
 
         ''' Transaction Parameters '''
         hasTrans = True  # True/False to enable/disable transactions in the simulator
-        Ttechnique = "Light"  # Full/Light to specify the way of modelling transactions
+        Ttechnique = "Full"  # Full/Light to specify the way of modelling transactions
         Tn = 20  # The rate of the number of transactions to be created per second
         # The average transaction propagation delay in seconds (Only if Full technique is used)
         Tdelay = 3

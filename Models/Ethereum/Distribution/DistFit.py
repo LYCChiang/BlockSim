@@ -24,12 +24,12 @@ class DistFit():
     x=0
 
     def fit():
-          if DistFit.x<1:
+        if DistFit.x<1:
           	df= pd.read_excel("Models/Ethereum/Distribution/Data_sets.xlsx",sheet_name="Set1")
-          	df2= pd.read_excel("Models/Ethereum/Distribution/Data_sets.xlsx",sheet_name="Set2")
-          	DistFit.cgas,DistFit.cprice,DistFit.ctime= DistFit.creation_fit(df) # fitted models (u:used gas, p: gas price, t: cpu time)
-          	DistFit.egas,DistFit.eprice,DistFit.etime= DistFit.execution_fit(df2)
-          	DistFit.x+=1
+            df2= pd.read_excel("Models/Ethereum/Distribution/Data_sets.xlsx",sheet_name="Set2")
+            DistFit.cgas,DistFit.cprice,DistFit.ctime= DistFit.creation_fit(df) # fitted models (u:used gas, p: gas price, t: cpu time)
+            DistFit.egas,DistFit.eprice,DistFit.etime= DistFit.execution_fit(df2)
+            DistFit.x+=1
 
 
     def creation_fit(df):
